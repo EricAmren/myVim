@@ -1,0 +1,64 @@
+###########################################################################
+#                             Python Snippets                             #
+###########################################################################
+
+##############
+#  New File  #
+##############
+
+snippet script "Template for new script" !b
+#!/usr/bin/env python
+# -*- coding: utf8 -*-
+
+"""
+`!p snip.rv =snip.rv =  fn`
+
+${1}
+
+"""
+
+__author__ = ""
+__license__ = "MIT"
+__date__ = "`date +%Y-%m-%d`"
+__version__ = "0.1"
+
+try:
+    import sys
+    import os
+    ${2}
+except ImportError:
+    print('''
+          An error found importing one module:
+          
+          {0}
+          
+          You need to install it
+          
+          Stopping...
+          '''.format(str(sys.exc_info()[1])).replace(' ', '')
+          )
+    sys.exit(-2)
+
+
+def main():
+    """Main section."""
+    ${4:pass}
+
+if __name__ == '__main__':
+    main()
+endsnippet
+
+###########################################################################
+#                             Simple Script                               #
+###########################################################################
+
+snippet ss "Template for a new simple script" !b
+#!/usr/bin/env python
+# -*- coding: utf8 -*-
+
+"""
+${1}
+"""
+
+${2}
+endsnippet
